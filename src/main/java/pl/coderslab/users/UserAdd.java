@@ -17,9 +17,6 @@ public class UserAdd extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
 
         User user = new User();
         user.setEmail(request.getParameter("email"));
@@ -36,6 +33,5 @@ public class UserAdd extends HttpServlet {
 
         getServletContext().getRequestDispatcher("/users/add.jsp").forward(request, response);
 
-//        System.out.println(email + username + password);
     }
 }

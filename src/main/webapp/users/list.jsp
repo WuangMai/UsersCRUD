@@ -7,7 +7,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
         <a href="<c:url value="/userAdd"/>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
     </div>
@@ -18,9 +18,30 @@
 <div class="row">
 </div>
 
-<div><c:forEach var="u" items="${userTab}">
-    ${u.userName}   ${u.email}<br>
-</c:forEach> </div>
+<div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nickname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Akcja</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <c:forEach var="u" begin="350" items="${userTab}">
+            <th scope="row">${u.id}</th>
+            <td>${u.userName}</td>
+            <td>${u.email}</td>
+            <td><a href="<c:url value="/userShow?id=${u.id}"/>">Pokaż</a></td>
+        </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 
 <!-- Content Row -->
 <div class="row">
