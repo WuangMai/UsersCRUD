@@ -36,7 +36,8 @@
             <th scope="row">${u.id}</th>
             <td>${u.userName}</td>
             <td>${u.email}</td>
-            <td><a href="<c:url value="/userShow?id=${u.id}"/>">Pokaż</a> - <a href="<c:url value="/userDelete?id=${u.id}"/>">Usuń</a></td>
+            <td><a href="<c:url value="/userShow?id=${u.id}"/>">Pokaż</a> - <a href="<c:url value="/userDelete?id=${u.id}"/>">Usuń</a>
+             - <a href="<c:url value="/userEdit?id=${u.id}"/>">Edytuj</a></td>
         </tr>
         </c:forEach>
         </tbody>
