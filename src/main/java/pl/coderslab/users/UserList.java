@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.List;
 
 @WebServlet("/user/list")
 public class UserList extends HttpServlet {
@@ -23,7 +24,8 @@ public class UserList extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("userTab", userTab());
+        getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
     }
 
     User[] userTab() {
@@ -33,6 +35,9 @@ public class UserList extends HttpServlet {
             e.printStackTrace();
         }
         UserDAO ud = new UserDAO();
+//        User[] result = ud.findAll();
+//        List<User>userList = Arrays.asList(ud.findAll());
+//        userList.subList(userList.size()-10,userList.size());
         return ud.findAll();
     }
 }
