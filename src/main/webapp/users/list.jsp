@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <%@ include file="/header.jsp" %>
 
@@ -32,11 +32,11 @@
 
         <tbody>
         <tr>
-            <c:forEach var="u" begin="350" items="${userTab}">
+            <c:forEach var="u" begin="330" items="${userTab}">
             <th scope="row">${u.id}</th>
             <td>${u.userName}</td>
             <td>${u.email}</td>
-            <td><a href="<c:url value="/userShow?id=${u.id}"/>">Pokaż</a></td>
+            <td><a href="<c:url value="/userShow?id=${u.id}"/>">Pokaż</a> - <a href="<c:url value="/userDelete?id=${u.id}"/>">Usuń</a></td>
         </tr>
         </c:forEach>
         </tbody>
@@ -52,10 +52,6 @@
     <div class="col-lg-6 mb-4">
 
     </div>
-</div>
-
-</div>
-
 </div>
 
 <%@ include file="/footer.jsp" %>
