@@ -9,7 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ include file="/header.jsp" %>
-<title>Dodawanie użytkownika</title>
 
 <div class="mx-5" style="width: 10px;">
     <h1 class="h3 mb-0 text-gray-800">Dodaj użytkownika</h1>
