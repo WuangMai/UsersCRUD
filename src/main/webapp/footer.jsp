@@ -1,17 +1,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-</div>
-</div>
-</div>
+
 <!-- Footer -->
+<body id="page-top">
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>
         </div>
     </div>
+    <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
 </footer>
+</body>
 <!-- End of Footer -->
 <script src="<c:url value=" /theme/vendor/jquery/jquery.min.js" />"></script>
 <script src="<c:url value=" /theme/vendor/bootstrap/js/bootstrap.bundle.min.js" />">

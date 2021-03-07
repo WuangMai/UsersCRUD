@@ -15,29 +15,25 @@ import java.util.List;
 public class UserList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDAO userDAO = new UserDAO();
+
         request.setAttribute("userTab", userTab());
-
-
         getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.setAttribute("userTab", userTab());
         getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
     }
 
     User[] userTab() {
         try {
-            Connection conn = DbUtil.getConnection();
+            DbUtil.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         UserDAO ud = new UserDAO();
-//        User[] result = ud.findAll();
-//        List<User>userList = Arrays.asList(ud.findAll());
-//        userList.subList(userList.size()-10,userList.size());
         return ud.findAll();
     }
 }
