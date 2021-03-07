@@ -16,6 +16,10 @@
         <div class="mx-5" style="width: auto">
             <form method="post" action="<c:url value="/userEdit"/> ">
                 <div class="form-group">
+                    <label for="id">Id</label>
+                    <input type="text" name="id" class="form-control" id="id" readonly value="${user.id}">
+                </div>
+                <div class="form-group">
                     <label for="email">Adres email</label>
                     <input type="email" name="email" class="form-control" id="email" value="${user.email}">
                 </div>

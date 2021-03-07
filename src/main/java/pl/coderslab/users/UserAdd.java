@@ -18,10 +18,7 @@ public class UserAdd extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        User user = new User();
-        user.setEmail(request.getParameter("email"));
-        user.setUserName(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
+        User user = new User(request.getParameter("username"),request.getParameter("email"),request.getParameter("password"));
 
         try {
             DbUtil.getConnection();

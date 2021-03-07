@@ -26,10 +26,8 @@ public class UserEdit extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = new User();
-        user.setEmail(request.getParameter("email"));
-        user.setUserName(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
+
+        User user = new User(Integer.parseInt(request.getParameter("id")), request.getParameter("username"),request.getParameter("email"),request.getParameter("password"));
 
         try {
             DbUtil.getConnection();
@@ -37,7 +35,7 @@ public class UserEdit extends HttpServlet {
             e.printStackTrace();
         }
         UserDAO ud = new UserDAO();
-//        ud.update(Integer.parseInt(request.getParameter("id")));
+        ud.update(user);
         response.sendRedirect("/user/list");
     }
 }
